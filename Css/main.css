@@ -1009,6 +1009,7 @@ header .mega-menu .links li > a > i {
   display: block;
   height: 40px;
   background-color: var(--main-color);
+  transition: 1s linear;
 }
 /* End Our Skills */
 
