@@ -993,12 +993,12 @@ header .mega-menu .links li > a > i {
 }
 
 .our-skill .skills .prog-holder h4 > span {
-  display: none;
   font-size: 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 5px 6px;
   color: var(--main-color);
+  opacity: 0;
   transition: 1s;
 }
 .our-skill .skills .prog-holder .prog {
@@ -1880,6 +1880,24 @@ footer .copyright {
 }
 
 /* End Footer */
+
+.scroll-up {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  z-index: 100;
+  background-image: url(../Image/icon_top.png);
+  opacity: 0.3;
+  transition: var(--main-transition-duration);
+}
+
+.scroll-up:hover {
+  cursor: pointer;
+  opacity: 1;
+}
 
 /* Start Animation */
 @keyframes up-and-down {
