@@ -172,12 +172,6 @@ header .main-nav {
   }
 }
 
-header .main-nav > li:hover .mega-menu {
-  opacity: 1;
-  z-index: 100;
-  top: calc(100% + 1px);
-}
-
 header .main-nav > li > a {
   display: flex;
   justify-content: center;
@@ -224,16 +218,26 @@ header .mega-menu {
   position: absolute;
   width: 100%;
   left: 0;
-  top: calc(100% + 50px);
   padding: 30px;
   background-color: white;
   border-bottom: solid var(--main-color);
   display: flex;
   gap: 40px;
-  opacity: 0;
-  z-index: -1;
   transition: top var(--main-transition-duration),
     opacity var(--main-transition-duration);
+}
+
+.close {
+  opacity: 0;
+  top: calc(100% + 50px);
+}
+.open {
+  opacity: 1;
+  top: calc(100% + 1px);
+}
+
+.in-top {
+  z-index: 100;
 }
 
 @media (max-width: 767px) {
@@ -301,6 +305,7 @@ header .mega-menu .links li a {
 header .mega-menu .links li > a > i {
   margin-right: 10px;
 }
+
 /* End Header */
 
 /* Start Landing */
@@ -799,13 +804,12 @@ header .mega-menu .links li > a > i {
 
 .team-member .box .data img {
   width: calc(100% - 60px);
-  height: 280px;
+  height: 268px;
   border-radius: 10px;
-  transition: var(--main-transition-duration);
+  transition: 1s linear;
 }
 
 .team-member .box:hover img {
-  transform: translateY(-10px);
   filter: grayscale(100%);
 }
 
@@ -867,12 +871,22 @@ header .mega-menu .links li > a > i {
   padding-bottom: var(--section-padding);
   background-color: var(--section-background);
   position: relative;
+  overflow: hidden;
 }
 
 .service .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
+}
+
+.right {
+  opacity: 0;
+  transform: translateX(1192px);
+}
+.left {
+  opacity: 0;
+  transform: translateX(-1192px);
 }
 
 .service .box {
@@ -885,6 +899,7 @@ header .mega-menu .links li > a > i {
   padding-top: 40px;
   counter-increment: services;
   position: relative;
+  transition: 2s;
 }
 
 .service .box::before {
@@ -1053,8 +1068,11 @@ header .mega-menu .links li > a > i {
   border: 2px solid white;
   border-radius: 5px;
   background-color: #f7f5f6;
-  z-index: 1;
   position: relative;
+  transition: 1s;
+  transform: scale(0);
+  opacity: 0.1;
+  z-index: 1;
 }
 
 @media (max-width: 991px) {
@@ -1892,6 +1910,13 @@ footer .copyright {
   background-image: url(../Image/icon_top.png);
   opacity: 0.3;
   transition: var(--main-transition-duration);
+}
+
+@media (max-width: 767px) {
+  .scroll-up {
+    right: 10px;
+    bottom: 13px;
+  }
 }
 
 .scroll-up:hover {
